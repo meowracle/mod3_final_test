@@ -1,0 +1,14 @@
+<!--<button [routerLink]="'/books/create'">Them sach moi</button>-->
+<h1>Danh sach da doc</h1>
+<table>
+  <thead>
+  <td>Ten sach</td>
+<!--  <td>Tinh trang</td>-->
+  </thead>
+  <tr *ngFor="let book of bookList">
+    <td *ngIf="!book.read">{{book.name}}</td>
+    <td *ngIf="!book.read"><input type="button" value="Doc lai" (click)="changeStatus(book)"></td>
+  </tr>
+</table>
+<a [routerLink]="'/books/book-unread'">Danh sach doc</a>
+

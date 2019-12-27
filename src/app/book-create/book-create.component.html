@@ -1,0 +1,11 @@
+<h1>Tao moi sach</h1>
+<form [formGroup]="createForm" (ngSubmit)="onSubmit()">
+  <label>Ten sach</label>
+  <input placeholder="Ten sach" type="text" formControlName="name" class="form-control">
+  <label>Da doc hay chua?</label>
+  <select formControlName="read" class="form-control">
+    <option value="true">Chua doc</option>
+    <option value="false">Da doc</option>
+  </select>
+  <button type="submit">Them sach</button>
+</form>

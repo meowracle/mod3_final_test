@@ -1,0 +1,31 @@
+<!--<button [routerLink]="'/books/create'">Them sach moi</button>-->
+<h1>Danh sach doc</h1>
+<table>
+  <thead>
+  <td>Ten sach</td>
+<!--  <td>Tinh trang</td>-->
+  </thead>
+  <tr *ngFor="let book of bookList">
+    <td *ngIf="book.read">{{book.name}}</td>
+    <td *ngIf="book.read"><input type="button" value="Da doc" (click)="changeStatus(book)"></td>
+  </tr>
+</table>
+
+<form [formGroup]="createForm" (ngSubmit)="onSubmit()">
+  <table>
+    <tr>
+      <td>
+        <input placeholder="Them sach moi" type="text" formControlName="name" class="form-control">
+      </td>
+      <td>
+        <select formControlName="read" class="form-control">
+          <option value="true">Chua doc</option>
+          <option value="false">Da doc</option>
+        </select>
+      </td>
+      <button type="submit">Them sach</button>
+    </tr>
+  </table>
+</form>
+
+<a [routerLink]="'/books/book-read'">Danh sach da doc</a>
